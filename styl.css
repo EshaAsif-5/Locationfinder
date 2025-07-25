@@ -1,0 +1,368 @@
+    :root {
+      --color-taupe: #463F3A;
+      --color-battleship-gray: #8A817C;
+      --color-silver: #BCB8B1;
+      --color-isabelline: #F4F3EE;
+      --color-melon: #E0AFA0; /* This color is no longer used for the banner */
+      --color-blue-banner: #4A90E2; /* A shade of blue for the banner */
+
+      /* Light Mode Colors - Adjusted */
+      --bg-primary-light: #ffffff;
+      --bg-container-light: #ffffff;
+      --text-color-light: var(--color-taupe);
+      --input-border-light: #ddd;
+      --dropdown-bg-light: #ffffff;
+      --dropdown-hover-light: #f9f9f9;
+      --header-bg-light: var(--color-blue-banner); /* Changed to blue */
+      --header-text-light: #ffffff;
+
+      /* Dark Mode Colors - Keep as is, or adjust if desired */
+      --bg-dark: #1e1e1e;
+      --card-dark: #2e2e2e;
+      --text-dark: #f9f9f9;
+      --accent: #4f46e5;
+      --header-bg-dark: #2C3E50; /* A darker blue/grey for dark mode banner */
+      --header-text-dark: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg-primary-light);
+      color: var(--text-color-light);
+      transition: background 0.3s ease, color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .welcome-banner {
+        background-color: var(--header-bg-dark);
+        color: var(--header-text-light);
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .dark-mode .welcome-banner {
+        background-color: var(--header-bg-dark);
+        color: var(--header-text-dark);
+    }
+
+    .welcome-banner span {
+        font-style: italic;
+    }
+
+    .hero {
+      background-image: url('https://picsum.photos/1200/400?random=1');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 3.2rem;
+      max-width: 800px;
+      line-height: 1.2;
+      text-align: center;
+      width: 100%;
+      padding-right: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: var(--bg-container-light);
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    }
+
+    .dark-mode .container {
+      background: var(--card-dark);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+
+    h2, h3 {
+      margin-top: 0;
+      color: var(--text-color-light);
+      font-size: 1.8rem;
+      text-align: center;
+      padding-right: 0;
+    }
+
+    .dark-mode h2, .dark-mode h3 {
+        color: var(--text-dark);
+    }
+
+    button {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 15px;
+      margin-top: 10px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #3730a3;
+      transform: translateY(-2px);
+    }
+
+    input[type="text"],
+    input[type="date"],
+    .modal-content input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      background-color: var(--bg-container-light);
+      color: var(--text-color-light);
+      transition: background-color 0.3s ease;
+    }
+
+    .dark-mode input[type="text"],
+    .dark-mode input[type="date"],
+    .dark-mode .modal-content input[type="number"] {
+        background-color: #3a3a3a;
+        color: var(--text-dark);
+    }
+
+    .dropdown {
+      display: none;
+      max-height: 200px;
+      overflow-y: auto;
+      text-align: left;
+      border: 1px solid var(--input-border-light);
+      background: var(--dropdown-bg-light);
+      border-radius: 8px;
+      margin-top: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .dark-mode .dropdown {
+        background: var(--card-dark);
+        border-color: #555;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .dropdown div {
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .dropdown div:hover {
+      background: var(--dropdown-hover-light);
+    }
+
+    .dark-mode .dropdown div:hover {
+        background: #4a4a4a;
+    }
+
+    .info {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border: none;
+      box-shadow: none;
+    }
+
+    .dark-mode .info {
+      background: #444;
+      border: none;
+      box-shadow: none;
+    }
+
+    .info img {
+      width: 100px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border: none;
+    }
+    .dark-mode .info img {
+        border: none;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #eee;
+      margin: 30px 0;
+    }
+    .dark-mode hr {
+        border-top: 1px solid #555;
+    }
+
+    #location-display {
+      font-weight: bold;
+      margin: 20px;
+      text-align: center;
+      padding: 10px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 8px;
+      display: inline-block;
+      color: white;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin-right: auto;
+        margin-left: auto;
+        width: 90%;
+      }
+      .hero h1, h2, h3 {
+        text-align: center;
+        padding-right: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px 10px;
+      }
+
+      .actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero {
+        padding: 60px 15px;
+      }
+
+      .actions button {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+        .hero h1 {
+            font-size: 1.5rem;
+        }
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: var(--bg-container-light);
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #e0e0e0;
+        width: 80%;
+        max-width: 450px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        position: relative;
+        text-align: center;
+    }
+
+    .dark-mode .modal-content {
+      background-color: var(--card-dark);
+      border-color: #555;
+    }
+
+    .close-button {
+        color: var(--color-taupe);
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .dark-mode .close-button {
+      color: var(--text-dark);
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-buttons {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    /* Specific styles for Age Input Modal */
+    #ageInputModal .modal-content {
+        padding-bottom: 30px;
+    }
+
+    #ageInputModal input[type="number"] {
+        margin-bottom: 15px;
+        max-width: 200px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #ageInputModal .modal-buttons {
+        justify-content: center;
+        padding-right: 0;
+    }
+ 
