@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geo-Age-Country App</title>
+  <link rel="stylesheet" href="styl.css" />
+   </head>
+<body>
+  <div class="welcome-banner">
+    Welcome from <span id="welcomeLocation">Loading location...</span>!
+  </div>
+
+  <div class="hero">
+    <h1 id="heroText">Discover Your World</h1>
+    <div id="location-display">Loading location...</div>
+  </div>
+
+  <div class="container">
+    <h3>Age Information</h3>
+    <p id="initialAgeDisplay"></p>
+    <label for="dob">Select Date of Birth:</label>
+    <input type="date" id="dob" />
+    <div id="ageInfo"></div>
+
+    <hr>
+
+    <h3>Select a Country</h3>
+    <input type="text" id="countrySearch" placeholder="Search for a country..." />
+    <div id="dropdown" class="dropdown"></div>
+    <div id="countryInfo" class="info" style="display: none;">
+      <img id="flag" alt="Country Flag" />
+      <p><strong>Country:</strong> <span id="name"></span></p>
+      <p><strong>Capital:</strong> <span id="capital"></span></p>
+      <p><strong>Population:</strong> <span id="population"></span></p>
+    </div>
+
+    <div class="actions">
+      <button onclick="resetAll()">Reset All</button>
+      <button onclick="toggleTheme()">Change Theme</button>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button info-modal-close">&times;</span>
+      <p id="modalMessage"></p>
+      <div id="modalButtons" class="modal-buttons"></div>
+    </div>
+  </div>
+
+  <div id="ageInputModal" class="modal">
+    <div class="modal-content">
+      <p id="ageInputModalMessage">Please enter your age:</p>
+      <input type="number" id="ageInputField" placeholder="Enter age" min="1" />
+      <div class="modal-buttons">
+        <button id="submitAgeButton">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
