@@ -31,7 +31,7 @@ A responsive browser-based application that detects a user's location by IP, val
 
 ## 🚀 Live Demo
 
-[🔗 View the Live App](https://your-deployment-link.com)
+[🔗 View the Live App](https://globallocationfinder.netlify.app/)
 
 ---
 
